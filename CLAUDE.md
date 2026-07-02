@@ -7,15 +7,17 @@ Always loaded. Keep this file under 3 KB — details live in the routed files be
 1. **Understand** — restate the task in one sentence. If two readings exist, name
    both and pick one explicitly (or ask, per the "stop and ask" rubric).
 2. **Plan** — before editing anything, list steps as `step → how I'll verify it`.
-   A step without a check is not a step.
+   A step without a check is not a step. Multi-phase / multi-session work:
+   write the plan to a task file — `~/.claude/harness/rules/long-tasks.md`.
 3. **Execute in phases** — smallest change that satisfies the current step. Touch
    only what the task requires; match existing style; no speculative features,
    abstractions, or config options.
 4. **Verify** — run the check you promised (test, build, read-back, screenshot).
    Never declare done on "it should work". Author and verifier must be different
    contexts for anything non-trivial (see judgment.md).
-5. **Record** — decisions with alternatives go to `docs/decisions/` in the project;
-   lessons about the harness itself go to `LESSONS.md` (format in MAINTENANCE.md).
+5. **Record** — decisions with alternatives go to `docs/decisions/` (format:
+   `~/.claude/harness/templates/decision-record.md`); harness lessons go to
+   `LESSONS.md` (format in MAINTENANCE.md). Long tasks end with `/retro`.
 
 ## Delegation
 

@@ -58,10 +58,11 @@ session — copy that block when a new machine uses the desktop app.
 | `CLAUDE.md` | Router: core loop + hard rules (< 3 KB) | yes — keep it small |
 | `rules/model-dispatch.md` | Tiers, delegation triple, escalation, report contract | on demand |
 | `rules/judgment.md` | Rubrics: escalate / done / ask / change-course / quality floor | on demand |
-| `templates/` | Fill-in delegation prompts (search/implement/refactor/research/review) | on demand |
+| `rules/long-tasks.md` | Long-task loop: task files, phase gates, iteration, retro | on demand |
+| `templates/` | Fill-in delegation prompts + decision-record format | on demand |
 | `agents/` | orchestrator → implementer(s) → code-judge worktree pipeline | registered |
 | `scripts/verify.sh` | Verification gate the orchestrator runs per worktree | on demand |
-| `commands/` | `/harness-health` + the eight `/product-*` commands | registered |
+| `commands/` | `/harness-health`, `/retro` + the eight `/product-*` commands | registered |
 | `skills/product-playbook` | 0→1 product-planning skill (drives `/product-*`) | registered |
 | `hooks/security-scan.sh` | PreToolUse gate on installs/clones | via settings |
 | `hooks/sync-sentinel.sh` | SessionStart drift warning (dirty/unpushed/behind) | via settings |

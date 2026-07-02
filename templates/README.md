@@ -21,3 +21,6 @@ Rules that apply to all templates (from `../rules/model-dispatch.md`):
 | Restructure without behavior change | `delegate-refactor.md` | STANDARD |
 | Investigate and recommend | `delegate-research.md` | STANDARD |
 | Verify someone else's work | `delegate-review.md` | TOP, fresh context |
+
+Non-delegation template: `decision-record.md` — the format for `docs/decisions/`
+entries (routed from the core loop's Record step and `/retro`).
