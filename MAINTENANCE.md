@@ -18,7 +18,8 @@ Read this whole file before editing anything in this repo.
    `backups/<name>.<YYYYMMDD>` (gitignored) or rely on a clean git state (commit
    before and after). New content prefers new files.
 5. **Commit every accepted change** with a message stating what changed and which
-   failure/lesson motivated it.
+   failure/lesson motivated it — and push the same day. Other machines sync via
+   git; unpushed commits are invisible to them (the SessionStart sentinel warns).
 
 ## What you may change without asking the user
 

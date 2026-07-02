@@ -21,6 +21,12 @@ contents into the main thread, stop and dispatch instead.
 Exception: a task the commander can finish in ≤ 2 tool calls (one targeted read,
 one edit) is cheaper done inline than delegated.
 
+No-subagent environments: if the current environment cannot spawn subagents at
+all, these rules still apply in spirit — work in explicit phases, write
+intermediate findings to files instead of holding them in context, and hold your
+own phase summaries to the report contract (§5). The tier table then governs
+which model to recommend running, not what to dispatch.
+
 ## 2. Model tiers
 
 Rules below reference tiers, not model names. Map tiers to this environment's

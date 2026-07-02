@@ -26,6 +26,9 @@ PM work.
 domain plugins (pm-skills) per project in that project's `.claude/settings.json`, not
 in the user-level settings.
 
+**Applied 2026-07-03:** the 8 pm-skills plugins were removed from user-level
+`settings.json`; the per-project enable pattern is documented in the README.
+
 ### 3. Commander doing grunt work in the main conversation
 Bulk file reads, repo scans, and web research executed in the main thread fill the
 window with raw dumps; auto-compaction then discards exactly the details long tasks

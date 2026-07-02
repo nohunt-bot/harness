@@ -16,3 +16,22 @@ Compact when > 30 entries or ~200 lines.
   originals were injected into every session.
 - Root cause: no budget for always-loaded content; adding felt free.
 - Rule change: applied — CLAUDE.md < 3 KB cap + MAINTENANCE.md prime directive #1.
+
+## 2026-07-03 — MCP config written to a path Claude Code never reads
+- What happened: `~/.claude/mcp.json` sat there for months; `claude mcp list`
+  showed neither server. The obsidian URL (TLS port 27124, self-signed cert) had
+  never been exercised and didn't work either.
+- Root cause: config "verified" by reading the file back, never by the consuming
+  tool's own listing command — verification theater on the harness itself.
+- Rule change: applied — install.sh registers servers via `claude mcp add-json`
+  and `--check` verifies with `claude mcp get`; README documents the real config
+  path (`~/.claude.json`).
+
+## 2026-07-03 — Predicted fork drift materialized (stale security-scan.sh)
+- What happened: the pre-harness `~/.claude/security-scan.sh` (old, buggier copy)
+  sat beside the repo-owned hook; LETTER.md had predicted exactly this mode.
+- Root cause: install.sh retired only `~/.claude/rules`, not other superseded
+  files, and no mechanical drift check existed.
+- Rule change: applied — install.sh retires superseded files (rules/,
+  security-scan.sh, mcp.json) and `install.sh --check` fails on stale files and
+  non-symlink drift; hooks/sync-sentinel.sh warns each session start.
