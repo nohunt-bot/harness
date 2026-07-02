@@ -51,7 +51,10 @@ session — copy that block when a new machine uses the desktop app.
   should be means someone hot-fixed `~/.claude` directly. Fold the change back
   into the repo, then re-run `./install.sh`.
 - Run `/harness-health` monthly, or after any environment change (new machine,
-  renamed models, added/removed agents).
+  renamed models, added/removed agents). On the primary Mac this is a Claude
+  Desktop scheduled task since 2026-07-03 (`monthly-harness-health`, 1st of
+  each month 09:00; runs on next launch if the app was closed) — other
+  machines run it manually.
 
 ## Layout
 
