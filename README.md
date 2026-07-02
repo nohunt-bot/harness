@@ -62,6 +62,8 @@ session — copy that block when a new machine uses the desktop app.
 | `templates/` | Fill-in delegation prompts + decision-record format | on demand |
 | `agents/` | orchestrator → implementer(s) → code-judge worktree pipeline | registered |
 | `scripts/verify.sh` | Verification gate the orchestrator runs per worktree | on demand |
+| `scripts/worktree.sh` | Portable Enter/Exit worktree (plain git) for non-Claude-Code envs | on demand |
+| `portability/base-system-prompt.md` | System-prompt floor + wiring checklist for non-Claude-Code envs | other envs only |
 | `commands/` | `/harness-health`, `/retro` + the eight `/product-*` commands | registered |
 | `skills/product-playbook` | 0→1 product-planning skill (drives `/product-*`) | registered |
 | `hooks/security-scan.sh` | PreToolUse gate on installs/clones | via settings |
@@ -123,6 +125,7 @@ One-off approvals must not be promoted into the allowlist.
 | Claude Code | Fully wired: symlinks, hooks, MCP, permissions. |
 | Codex | Router linked to `~/.codex/AGENTS.md` when `~/.codex` exists — re-run `./install.sh` after installing Codex. Tier cells in `rules/model-dispatch.md` §2: fill after verifying with the env's own model list. |
 | Hermes | **Not yet wired.** `~/.hermes/config.yaml` has its own instruction/skills mechanism; wiring means exposing `CLAUDE.md` through it and filling the Hermes tier cells. Until then, harness rules do not bind Hermes — don't assume they do. |
+| On-prem / other frameworks | Wire per [portability/base-system-prompt.md](portability/base-system-prompt.md): inject that file + `CLAUDE.md` as the system prompt, map tools/permissions, fill a tier column. `verify.sh` and `worktree.sh` run anywhere with bash + git. |
 
 ## Secrets
 
