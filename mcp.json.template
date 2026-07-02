@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "obsidian": {
+      "type": "http",
+      "url": "https://127.0.0.1:27124/mcp/",
+      "headers": {
+        "Authorization": "Bearer ${OBSIDIAN_API_KEY}"
+      }
+    },
+    "playwright": {
+      "command": "playwright-mcp",
+      "args": ["--browser", "chrome"]
+    }
+  }
+}

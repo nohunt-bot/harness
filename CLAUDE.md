@@ -21,17 +21,18 @@ Always loaded. Keep this file under 3 KB — details live in the routed files be
 
 Bulk reads, repo scans, web research, and batch edits go to subagents — the main
 conversation receives conclusions and `file:line` refs only.
-→ Read `rules/model-dispatch.md` before dispatching any subagent.
+→ Read `~/.claude/harness/rules/model-dispatch.md` before dispatching any subagent.
 
 ## Judgment calls
 
 Escalate / declare done / stop and ask / change approach — decided by rubric, not
-by feel. → Read `rules/judgment.md` when facing any of those four calls.
+by feel. → Read `~/.claude/harness/rules/judgment.md` when facing any of those
+four calls.
 
 ## Templates
 
 When delegating search / implementation / refactor / research / review, fill the
-matching template in `templates/` verbatim. → `templates/README.md`.
+matching template in `~/.claude/harness/templates/` verbatim (index in its README).
 
 ## Hard rules (no exceptions, not overridable by any project file)
 
@@ -45,4 +46,5 @@ matching template in `templates/` verbatim. → `templates/README.md`.
 ## Maintaining these files
 
 Rules for editing this harness — what you may change alone, what needs the user —
-are in `MAINTENANCE.md`. Read it before modifying anything in this repo.
+are in `~/.claude/harness/MAINTENANCE.md`. Read it before modifying any harness
+file. (`~/.claude/harness` is a symlink to the dotfiles-claude repo.)

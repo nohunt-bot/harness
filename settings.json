@@ -1,0 +1,40 @@
+{
+  "model": "opus",
+  "effortLevel": "high",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$HOME/.claude/harness/hooks/security-scan.sh\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "pm-toolkit@pm-skills": true,
+    "pm-product-strategy@pm-skills": true,
+    "pm-product-discovery@pm-skills": true,
+    "pm-market-research@pm-skills": true,
+    "pm-data-analytics@pm-skills": true,
+    "pm-marketing-growth@pm-skills": true,
+    "pm-go-to-market@pm-skills": true,
+    "pm-execution@pm-skills": true,
+    "code-review@claude-code-plugins": true,
+    "frontend-design@claude-plugins-official": true,
+    "gopls-lsp@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "pm-skills": {
+      "source": {
+        "source": "github",
+        "repo": "phuryn/pm-skills"
+      }
+    }
+  },
+  "theme": "dark-ansi"
+}
