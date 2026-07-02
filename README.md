@@ -25,8 +25,10 @@ printf 'export OBSIDIAN_API_KEY="..."\n' > ~/.claude/secrets.env
 chmod 600 ~/.claude/secrets.env
 echo '[ -f ~/.claude/secrets.env ] && source ~/.claude/secrets.env' >> ~/.zshenv
 
-# 4. Dependencies: jq (required by hooks), @playwright/mcp (optional):
-#    brew install jq && npm i -g @playwright/mcp
+# 4. Dependencies: jq (required by hooks), @playwright/mcp (optional),
+#    pip-audit (optional — enables the pip vulnerability warning in
+#    hooks/security-scan.sh; without it the hook logs SKIP and allows):
+#    brew install jq && npm i -g @playwright/mcp && brew install pip-audit
 
 # 5. Verify
 ./install.sh --check

@@ -63,6 +63,24 @@ if [ "$install_type" = "npm" ]; then
   fi
 fi
 
+# ── pip audit check (warn-only: pip-audit severity data is too spotty to block) ──
+if [ "$install_type" = "pip" ]; then
+  if command -v pip-audit >/dev/null 2>&1; then
+    REQ_FILE=$(echo "$COMMAND" | grep -oE '\-r +[^ ]+' | awk '{print $2}' | head -1)
+    if [ -n "$REQ_FILE" ] && [ -f "$REQ_FILE" ]; then
+      AUDIT=$(pip-audit -r "$REQ_FILE" --no-deps -f json 2>/dev/null || true)
+      VULN_COUNT=$(echo "$AUDIT" | jq '[.dependencies[]?.vulns[]?] | length' 2>/dev/null || echo "0")
+      if [ "$VULN_COUNT" -gt 0 ] 2>/dev/null; then
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] VULN pip $REQ_FILE — $VULN_COUNT known vulnerabilities" >> "$LOGFILE"
+        jq -n --arg msg "⚠️ 資安提示：$REQ_FILE 內有 $VULN_COUNT 個已知漏洞（pip-audit --no-deps）。請確認後再繼續。" \
+          '{"hookSpecificOutput": {"hookEventName": "PreToolUse", "additionalContext": $msg}}'
+      fi
+    fi
+  else
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] SKIP pip audit — pip-audit not installed" >> "$LOGFILE"
+  fi
+fi
+
 # ── Warn for unrecognized git clone sources ──
 if [ "$install_type" = "git" ]; then
   if ! echo "$install_target" | grep -qE 'github\.com|gitlab\.com|bitbucket\.org'; then
