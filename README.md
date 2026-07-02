@@ -66,8 +66,8 @@ session — copy that block when a new machine uses the desktop app.
 | `scripts/verify.sh` | Verification gate the orchestrator runs per worktree | on demand |
 | `scripts/worktree.sh` | Portable Enter/Exit worktree (plain git) for non-Claude-Code envs | on demand |
 | `portability/base-system-prompt.md` | System-prompt floor + wiring checklist for non-Claude-Code envs | other envs only |
-| `commands/` | `/harness-health`, `/retro` + the eight `/product-*` commands | registered |
-| `skills/product-playbook` | 0→1 product-planning skill (drives `/product-*`) | registered |
+| `commands/` | `/harness-health`, `/retro` | registered |
+| `optional/` | Opt-in packs: product-playbook skill + eight `/product-*` commands | per project |
 | `hooks/security-scan.sh` | PreToolUse gate on installs/clones | via settings |
 | `hooks/sync-sentinel.sh` | SessionStart drift warning (dirty/unpushed/behind) | via settings |
 | `mcp.json.template` | MCP source of truth — `install.sh` registers it via the CLI | at install |
@@ -111,6 +111,17 @@ To use pm-skills in a project, add to that project's `.claude/settings.json`
 ```
 
 Enable only the plugins that project actually uses, not all eight.
+
+The product-playbook pack (8 `/product-*` commands + the skill) moved to
+opt-in per project on 2026-07-03 — same rationale (DIAGNOSIS token leak #2):
+it parked 9 descriptions in every session, PM work or not. To enable in a
+project:
+
+```bash
+mkdir -p .claude/commands .claude/skills
+ln -s ~/dotfiles-claude/optional/commands/product-*.md .claude/commands/
+ln -s ~/dotfiles-claude/optional/skills/product-playbook .claude/skills/
+```
 
 ## Permissions posture
 
