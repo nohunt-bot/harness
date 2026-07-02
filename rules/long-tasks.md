@@ -32,11 +32,18 @@ Skeleton — all five sections, always:
     ## Decisions              <- one-liners; real alternatives -> docs/decisions/
     ## Open questions         <- for the user, batched, not one at a time
 
+Plan-step status marks: `[ ]` pending · `[~]` running · `[x]` passed ·
+`[!]` failed — a failed step also gets `(retry: N)` appended to its line.
+The retry cap (`model-dispatch.md` §4) is enforced from these counters, not
+from conversation memory: compaction resets memory, never the file.
+
 ## 2. Phase loop
 
-For each plan step: execute (dispatching per `model-dispatch.md`) → run that
-step's promised check → append one progress line with the evidence → tick the
-checkbox → next step. A phase without a progress line did not happen.
+For each plan step: mark it `[~]` → execute (dispatching per
+`model-dispatch.md`) → run that step's promised check → append one progress
+line with the evidence → mark `[x]` → next step. A failed check marks the step
+`[!]` and increments its `(retry: N)` before any fix attempt starts. A phase
+without a progress line did not happen.
 
 **Resume protocol** — after compaction, a new session, or any "continue"
 request: read the task file FIRST, trust its progress log over memory, and
@@ -50,7 +57,7 @@ recollection.
 | Explore / locate | CHEAP search agent — `templates/delegate-search.md` |
 | Research / compare | STANDARD — `templates/delegate-research.md` |
 | Plan | plan-approval mode if the environment has one; else write the task file directly |
-| Implement — locked plan, repo with tests | orchestrator pipeline (`agents/orchestrator.md`): worktree isolation + verify gate + judged merge |
+| Implement — locked plan, repo with tests or an explicit verify command | orchestrator pipeline (`agents/orchestrator.md`): worktree isolation + verify gate + judged merge |
 | Implement — ≤ 2 tool calls | inline (dispatch rules §1 exception) |
 | Refactor, no behavior change | STANDARD — `templates/delegate-refactor.md` |
 | Verify anything | fresh context — `templates/delegate-review.md` (dispatch §6) |
@@ -65,8 +72,8 @@ recollection.
 - User feedback on a delivered result = the next iteration of the SAME task
   file: extend the criteria, keep appending progress. Open a new file only
   when the goal itself changed.
-- The retry cap still binds: two rounds per subtask across all tiers, then
-  back to planning.
+- The retry cap still binds: two rounds per subtask across all tiers, counted
+  from the task file's `(retry: N)` marks — then back to planning.
 
 ## 5. Retro — every long task ends with one
 

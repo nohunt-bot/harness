@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 # Verification gate — run project tests in a worktree.
-# Usage: verify.sh <worktree-path>
-# Exit 0 = all tests pass. Exit 1 = failure or no tests found.
+# Usage: verify.sh <worktree-path> ["custom verify command"]
+# With a custom command: runs it in the worktree (shell string, e.g. "make lint && make build").
+# Without: auto-detects the project's test runner.
+# Exit 0 = verification passed. Exit 1 = failure or no verification method found.
 
 set -euo pipefail
 
 WORKTREE="${1:-}"
+CUSTOM_CMD="${2:-}"
 
 if [[ -z "$WORKTREE" ]]; then
   echo "ERROR: worktree path required" >&2
@@ -18,6 +21,18 @@ if [[ ! -d "$WORKTREE" ]]; then
 fi
 
 cd "$WORKTREE"
+
+if [[ -n "$CUSTOM_CMD" ]]; then
+  echo "[verify] running custom command: $CUSTOM_CMD"
+  if bash -c "$CUSTOM_CMD"; then
+    echo "[verify] PASSED"
+    exit 0
+  else
+    rc=$?
+    echo "[verify] FAILED (exit $rc)" >&2
+    exit "$rc"
+  fi
+fi
 
 # --- Detect test runner ---
 
