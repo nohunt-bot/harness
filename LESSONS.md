@@ -35,3 +35,13 @@ Compact when > 30 entries or ~200 lines.
 - Rule change: applied — install.sh retires superseded files (rules/,
   security-scan.sh, mcp.json) and `install.sh --check` fails on stale files and
   non-symlink drift; hooks/sync-sentinel.sh warns each session start.
+
+## 2026-07-03 — Pack distillation restated canonical numbers and drifted same-day
+- What happened: the new weak-model pack restated the single-model retry clause
+  and the receipt scope with different arithmetic than their canonical homes;
+  caught pre-commit by the fresh-context adversarial review.
+- Root cause: distillation had no numeric-drift check at write time — the
+  one-home rule compared topics, not numbers.
+- Rule change: applied — /harness-health step 2 now sweeps `pack/`
+  and compares mechanism numbers across homes; drift rule clarified in
+  `pack/05_maintenance.md` §3.

@@ -8,10 +8,13 @@ not impressions. The harness lives at `~/.claude/harness` (a symlink to the repo
 1. **Mechanical check**: run `bash ~/.claude/harness/install.sh --check`. It covers
    symlink integrity/fork drift, MCP registration, the CLAUDE.md 3 KB cap, and
    stale superseded files. Include its output verbatim.
-2. **Reference rot**: grep `rules/`, `templates/`, `agents/`, `commands/` for
-   referenced paths, agent names, and commands; verify each referenced thing
-   exists (`ls` the path, check the agent/skill file). Rules may only reference
-   things that exist — see `docs/DIAGNOSIS.md` focus-loss #1.
+2. **Reference rot**: grep `rules/`, `templates/`, `agents/`, `commands/`, and
+   `pack/` for referenced paths, agent names, and commands; verify
+   each referenced thing exists (`ls` the path, check the agent/skill file).
+   For each pack-canonical mechanism (tripwire, receipts, freeze, strikes)
+   confirm every non-canonical home states IDENTICAL numbers
+   (`pack/05_maintenance.md` §3). Rules may only reference things
+   that exist — see `docs/DIAGNOSIS.md` focus-loss #1.
 3. **Settings vs rules contradictions**: read `settings.json`; flag anything that
    contradicts a rule (DIAGNOSIS focus-loss #3). Permissions must contain no
    destructive allowlist entries (`rm -rf`, `kill`, force-push, resets).

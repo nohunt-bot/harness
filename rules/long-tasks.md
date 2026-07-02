@@ -41,7 +41,10 @@ from conversation memory: compaction resets memory, never the file.
 
 For each plan step: mark it `[~]` → execute (dispatching per
 `model-dispatch.md`) → run that step's promised check → append one progress
-line with the evidence → mark `[x]` → next step. A failed check marks the step
+line with the evidence (receipts for files produced — `scripts/receipt.sh`) →
+mark `[x]` → close with a `phase(<task>): <step>` commit; files last touched
+by a done phase's commit are frozen (`pack/01_diagnostics.md`
+§3.1/§3.3, canonical there) → next step. A failed check marks the step
 `[!]` and increments its `(retry: N)` before any fix attempt starts. A phase
 without a progress line did not happen.
 

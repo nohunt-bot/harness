@@ -91,6 +91,9 @@ Use the fill-in templates in `templates/` — they encode this triple.
 - **Hard cap: two retry rounds per subtask across all tiers.** After that, stop
   retrying — the task definition is probably wrong. Return to planning or apply
   the "wrong direction" rubric in `rules/judgment.md`.
+- Tool-call-level circuit breaker (3 consecutive failures → TRIPWIRE, fail-soft)
+  and per-tier strike rules: `pack/01_diagnostics.md` §3.2 and
+  `pack/02_orchestration.md` §4 (canonical there).
 
 ## 5. Report contract (what subagents return)
 

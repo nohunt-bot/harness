@@ -50,6 +50,16 @@
             "timeout": 10
           }
         ]
+      },
+      {
+        "matcher": "resume|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$HOME/.claude/harness/hooks/resume-sentinel.sh\"",
+            "timeout": 10
+          }
+        ]
       }
     ]
   },

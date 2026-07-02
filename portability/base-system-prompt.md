@@ -34,6 +34,11 @@ below "Role" is written to be injected verbatim as system-prompt text.
    whatever interception point the framework has, or run manually at session
    start. Until then those two loops are open — document that, don't assume
    them.
+7. The weak-model pack (`pack/01–06`) is the PRIMARY rulebook in
+   this environment: no hooks exist here, so its script rituals (receipts via
+   `scripts/receipt.sh`, tripwire counting, phase-commit freeze, resume ritual)
+   are the only mechanical defenses. Route the agent to read
+   `pack/01_diagnostics.md` before its first long task.
 
 ## Capability map — platform feature → portable substitute
 

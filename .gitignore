@@ -3,3 +3,4 @@
 *.local.json
 secrets.env
 *.bak
+backups/

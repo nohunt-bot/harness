@@ -64,15 +64,18 @@ session — copy that block when a new machine uses the desktop app.
 | `rules/model-dispatch.md` | Tiers, delegation triple, escalation, report contract | on demand |
 | `rules/judgment.md` | Rubrics: escalate / done / ask / change-course / quality floor | on demand |
 | `rules/long-tasks.md` | Long-task loop: task files, phase gates, iteration, retro | on demand |
+| `pack/` | Weak-model pack (01–06): failure blockers, strike rules, rubrics, templates, maintenance, manifesto | on demand |
 | `templates/` | Fill-in delegation prompts + decision-record format | on demand |
 | `agents/` | orchestrator → implementer(s) → code-judge worktree pipeline | registered |
 | `scripts/verify.sh` | Verification gate the orchestrator runs per worktree | on demand |
+| `scripts/receipt.sh` | Deliverable receipts (sha/bytes/mtime) — false-completion blocker | on demand |
 | `scripts/worktree.sh` | Portable Enter/Exit worktree (plain git) for non-Claude-Code envs | on demand |
 | `portability/base-system-prompt.md` | System-prompt floor + wiring checklist for non-Claude-Code envs | other envs only |
 | `commands/` | `/harness-health`, `/retro` | registered |
 | `optional/` | Opt-in packs: product-playbook skill + eight `/product-*` commands | per project |
 | `hooks/security-scan.sh` | PreToolUse gate on installs/clones | via settings |
 | `hooks/sync-sentinel.sh` | SessionStart drift warning (dirty/unpushed/behind) | via settings |
+| `hooks/resume-sentinel.sh` | SessionStart (resume/compact): points at active task files | via settings |
 | `mcp.json.template` | MCP source of truth — `install.sh` registers it via the CLI | at install |
 | `MAINTENANCE.md` | Who may edit what; lessons lifecycle; health check | on demand |
 | `LESSONS.md` | Incident log → rule changes | on demand |

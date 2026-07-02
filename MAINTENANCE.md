@@ -63,7 +63,8 @@ the second time.
 
 ## Compaction
 
-When `LESSONS.md` exceeds **30 entries or ~200 lines**: consolidate. Merge lessons
+When `LESSONS.md` exceeds **30 entries, ~200 lines, or ~5,000 tokens (≈20 KB)**:
+consolidate. Merge lessons
 sharing a root cause into one entry; lessons already promoted into rules get
 deleted (the rule is their tombstone — link the commit). Target after compaction:
 under 15 entries. Compaction is self-serve, but commit the pre-compaction state
