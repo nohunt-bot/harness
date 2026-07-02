@@ -82,6 +82,12 @@ Use the fill-in templates in `templates/` — they encode this triple.
 - **Pattern solved at a high tier** (e.g., the correct transform for one file) →
   de-escalate: batch-apply the proven pattern via CHEAP tier across the remaining
   cases, with a spot-check verification on a sample.
+- **Single-model environments** (every tier maps to the same model): the
+  ladder collapses to the retry cap. One retry with the full failure trail
+  in-prompt; a second failure on the same subtask counts as a TOP-tier
+  failure — stop retrying and apply `rules/judgment.md` §4 (change approach
+  or decompose further). "Escalate" never means a third run of the same
+  prompt.
 - **Hard cap: two retry rounds per subtask across all tiers.** After that, stop
   retrying — the task definition is probably wrong. Return to planning or apply
   the "wrong direction" rubric in `rules/judgment.md`.

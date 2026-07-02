@@ -1,7 +1,7 @@
 # Proposal: single-model degradation clause for the escalation ladder
 
 Date: 2026-07-03
-Status: awaiting user approval
+Status: approved by user 2026-07-03 — applied to `rules/model-dispatch.md` §4
 Protected zone: escalation ladder in `rules/model-dispatch.md` §4
 (MAINTENANCE.md "What requires the user's approval first").
 
