@@ -27,7 +27,7 @@ currently live in platform tools must move into repo scripts and prompt files.
 - [x] orchestrator.md worktree-ops abstraction -> grep: every Enter/Exit mention covered; referenced paths exist
 - [x] portability/base-system-prompt.md -> ls every referenced path; reviewer reader-test
 - [x] agents frontmatter (code-judge, implementer) -> frontmatter fields verified against Claude Code agent spec by reviewer
-- [x] docs/proposals/20260703-single-model-escalation.md -> read-back matches MAINTENANCE proposal format (diff + reason)
+- [x] docs/proposals/20260703-single-model-escalation.md (applied; now archive/proposals/) -> read-back matches MAINTENANCE proposal format (diff + reason)
 - [x] README layout + cross-agent tables -> read-back
 - [x] ./install.sh && ./install.sh --check -> exit 0
 - [x] fresh-context review (TOP tier) -> APPROVE; findings fixed at author tier
