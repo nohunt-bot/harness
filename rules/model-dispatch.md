@@ -135,4 +135,4 @@ main thread).
   author's reasoning. The task file carries the handoff
   (`rules/long-tasks.md` §2). Same-session self-review does not satisfy this
   section. (Approved 2026-07-04,
-  `docs/proposals/20260704-cost-efficiency-actions.md` §2.)
+  `archive/proposals/20260704-cost-efficiency-actions.md` §2.)

@@ -296,7 +296,8 @@ SUPPORTED. 27/27 experiments ran; none left planned.
    commands and MCP (E14 gaps).
 3. `templates/delegate-search.md` — anti-padding clause (E22 report bloat).
 
-**Proposed (approval-gated):** `docs/proposals/20260704-cost-efficiency-actions.md`
+**Proposed (approval-gated):** `archive/proposals/20260704-cost-efficiency-actions.md`
+(lived in docs/proposals/ until approved+applied 2026-07-04, then archived)
 1. Adopt compressed pack 01 (−47.3%, haiku recall 7→10/10).
 2. No-subagent fresh-context-verification ritual (E15's systemic hole).
 3. Hook comment rot + shebang normalization.

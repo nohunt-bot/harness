@@ -1,0 +1,23 @@
+== scripts/receipt.sh
+# Usage: receipt.sh <file> [...]
+#   Prints one line per file:  RECEIPT sha=<12-hex> bytes=<n> mtime=<ts> <path>
+#   MISSING/EMPTY lines and exit 1 when any file is absent or zero-byte.
+== scripts/verify.sh
+# Usage: verify.sh <worktree-path> ["custom verify command"]
+== scripts/worktree.sh
+# Usage:
+#   worktree.sh create <repo-path> <branch>
+#       Creates the branch (from the repo's current HEAD) and a worktree for
+#       it beside the repo. Last stdout line is "WORKTREE=<absolute-path>" —
+#       capture that as the worktree path. Slashes in the branch name are
+#       flattened to dashes for the dir, so "feat/x" and "feat-x" collide
+== install.sh
+# Usage:
+#   ./install.sh          install/repair symlinks + MCP registration
+#   ./install.sh --check  verify only (no changes); exit 1 on any drift
+#    agents/scripts/commands and per-directory links for skills.
+#    Individual links leave machine-local files in the same dirs untouched.
+#    A plain file at ~/.claude/mcp.json is NEVER read by Claude Code; that was
+== hooks/resume-sentinel.sh
+== hooks/security-scan.sh
+== hooks/sync-sentinel.sh

@@ -53,7 +53,8 @@ Compact when > 30 entries or ~200 lines.
   .md rule directories; comments in `scripts/` and `hooks/` were never in scope.
 - Rule change: applied — harness-health step 2 now includes `scripts/*.sh` and
   `hooks/*.sh` comments; receipt.sh fixed same-day (commit c488c97), the hook
-  comment fix is gated → docs/proposals/20260704-cost-efficiency-actions.md §3.
+  comment fix is gated → archive/proposals/20260704-cost-efficiency-actions.md §3
+  (applied same day; proposal archived).
 
 ## 2026-07-03 — Pack distillation restated canonical numbers and drifted same-day
 - What happened: the new weak-model pack restated the single-model retry clause

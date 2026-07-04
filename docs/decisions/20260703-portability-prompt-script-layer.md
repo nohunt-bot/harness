@@ -34,6 +34,7 @@ Claude Code normally injects, a plain-git worktree script
 - Any bash+git environment can run the full orchestrator → implementer →
   verify pipeline; Claude Code behavior is unchanged.
 - The single-model escalation gap needs a §4 clause
-  (docs/proposals/20260703-single-model-escalation.md, awaiting approval).
+  (archive/proposals/20260703-single-model-escalation.md — approved and
+  applied 2026-07-03, archived 2026-07-04).
 - Revisit when: the company framework is actually wired — fill its tier
   column in model-dispatch §2 and test the hooks mapping on-site.

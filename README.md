@@ -81,6 +81,8 @@ session — copy that block when a new machine uses the desktop app.
 | `LESSONS.md` | Incident log → rule changes | on demand |
 | `LETTER.md` | Context for future sessions | read once |
 | `docs/DIAGNOSIS.md` | Why every rule exists | reference |
+| `docs/experiments/` | Hypothesis logs + rerunnable measurement scripts | reference |
+| `archive/` | Resolved history (applied proposals) — never loaded, never deleted | no |
 
 ## MCP servers
 

@@ -1,0 +1,72 @@
+== E01 CLAUDE.md always-loaded: 3046 B ~761tok | budget 3072 B -> WITHIN (-26 B)
+
+== E02 always-loaded overlay (session start)
+     3046 B    ~761tok  CLAUDE.md
+      569 B    ~142tok  MEMORY.md index
+      316 B     ~79tok  hooks/resume-sentinel.sh stdout (exit 0)
+      129 B     ~32tok  hooks/sync-sentinel.sh stdout (exit 0)
+     4060 B   ~1015tok  TOTAL
+
+== E03 rules/*.md
+     6031 B   ~1507tok  rules/judgment.md
+     4512 B   ~1128tok  rules/long-tasks.md
+     7278 B   ~1819tok  rules/model-dispatch.md
+    17821 B   ~4455tok  TOTAL
+
+== E04 pack/*.md
+     6012 B   ~1503tok  pack/01_diagnostics.md
+     6656 B   ~1664tok  pack/02_orchestration.md
+     6563 B   ~1640tok  pack/03_rubrics.md
+     6204 B   ~1551tok  pack/04_templates.md
+     4796 B   ~1199tok  pack/05_maintenance.md
+     5966 B   ~1491tok  pack/06_manifesto.md
+    36197 B   ~9049tok  TOTAL
+
+== E07 templates/*.md (per-dispatch overhead)
+     1337 B    ~334tok  templates/README.md
+     1015 B    ~253tok  templates/decision-record.md
+     1626 B    ~406tok  templates/delegate-implement.md
+     1676 B    ~419tok  templates/delegate-refactor.md
+     1533 B    ~383tok  templates/delegate-research.md
+     1829 B    ~457tok  templates/delegate-review.md
+     1558 B    ~389tok  templates/delegate-search.md
+    10574 B   ~2643tok  TOTAL
+
+== E09 agents/*.md (orchestrator pipeline load)
+     1542 B    ~385tok  agents/code-judge.md
+     2371 B    ~592tok  agents/implementer.md
+     4634 B   ~1158tok  agents/orchestrator.md
+     8547 B   ~2136tok  TOTAL
+
+== E05 long-task session routed load
+     3046 B    ~761tok  CLAUDE.md
+     6012 B   ~1503tok  pack/01_diagnostics.md
+     4512 B   ~1128tok  rules/long-tasks.md
+     7278 B   ~1819tok  rules/model-dispatch.md
+     6031 B   ~1507tok  rules/judgment.md
+     1558 B    ~389tok  templates/delegate-search.md
+    28437 B   ~7109tok  TOTAL
+
+== E10 maintenance-time load
+     4189 B   ~1047tok  MAINTENANCE.md
+     4796 B   ~1199tok  pack/05_maintenance.md
+     8522 B   ~2130tok  README.md
+    17507 B   ~4376tok  TOTAL
+
+== E06 pack->source verbatim 8-word-shingle overlap (lower bound of restatement)
+    0.1%  pack/01_diagnostics.md (870 shingles)
+    5.2%  pack/02_orchestration.md (962 shingles)
+    3.2%  pack/03_rubrics.md (1007 shingles)
+    1.1%  pack/04_templates.md (882 shingles)
+    0.6%  pack/05_maintenance.md (717 shingles)
+    0.0%  pack/06_manifesto.md (908 shingles)
+
+   mechanism keyword -> #files mentioning it (semantic-redundancy indicator)
+             TRIPWIRE:  7 files
+              receipt:  9 files
+                freez:  4 files
+              escalat: 11 files
+    delegation triple:  5 files
+      report contract:  4 files
+                taste:  4 files
+              compact:  6 files
