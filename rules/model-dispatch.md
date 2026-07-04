@@ -32,10 +32,10 @@ which model to recommend running, not what to dispatch.
 Rules below reference tiers, not model names. Map tiers to this environment's
 actual models here — and only here.
 
-| Tier | Claude Code (verified 2026-07) | Codex | Hermes |
-|------|-------------------------------|-------|--------|
-| CHEAP | `haiku` (claude-haiku-4-5) | *fill after running the env's model-list command* | *fill from `~/.hermes/config.yaml`* |
-| STANDARD | `sonnet` (claude-sonnet-4-6) | *fill* | *fill* |
+| Tier | Claude Code (verified 2026-07)                                  | Codex | Hermes |
+|------|-----------------------------------------------------------------|-------|--------|
+| CHEAP | `haiku` (claude-haiku-4-5)                                      | *fill after running the env's model-list command* | *fill from `~/.hermes/config.yaml`* |
+| STANDARD | `sonnet` (claude-sonnet-5)                                      | *fill* | *fill* |
 | TOP | `opus` (claude-opus-4-8); `fable` (claude-fable-5) if available | *fill* | *fill* |
 
 Do not fill the blank cells from memory. Run the environment's own listing command,
