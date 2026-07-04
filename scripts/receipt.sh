@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Receipt generator — mechanical proof that a claimed deliverable actually landed.
-# Spec: .cursor/harness/01_diagnostics.md §3.1 (canonical). Portable: macOS + Linux.
+# Spec: pack/01_diagnostics.md §3.1 (canonical). Portable: macOS + Linux.
 #
 # Usage: receipt.sh <file> [...]
 #   Prints one line per file:  RECEIPT sha=<12-hex> bytes=<n> mtime=<ts> <path>

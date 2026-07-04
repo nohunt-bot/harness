@@ -51,6 +51,8 @@ below "Role" is written to be injected verbatim as system-prompt text.
 | `CLAUDE.md` auto-injection | This file + `CLAUDE.md` as the system prompt |
 | Verification gate | `scripts/verify.sh` — pure bash, unchanged |
 | Permissions allow/deny (`settings.json`) | Framework tool filter, mapped from the Safety floor below |
+| Slash commands (`/retro`, `/harness-health`) | Walk the checklist in `commands/<name>.md` manually (long-tasks §5 / MAINTENANCE health check) |
+| MCP servers (`mcp.json.template`) | Usually absent — prefer CLI/scripts anyway (`pack/01_diagnostics.md` §4); delete MCP-dependent lines per step 3 |
 
 The pipeline in `agents/` (orchestrator → implementer → code-judge) is prompt
 text: register the three `.md` files as role definitions if the framework

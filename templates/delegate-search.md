@@ -26,3 +26,6 @@ and must not miss a consumer"}}.
 - Table: `path:line | what it does there | category {{your categories, optional}}`.
 - Search commands used.
 - Do NOT paste file contents beyond the matching line ±2 lines of context.
+- Return ONLY the sections above — no extra analysis, groupings, or
+  recommendations beyond what the criteria ask for (padding costs the
+  commander context).

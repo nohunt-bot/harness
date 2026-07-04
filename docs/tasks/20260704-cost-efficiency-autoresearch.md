@@ -26,7 +26,7 @@ Status: active (2026-07-04)
 - [x] P4: cost simulations E24–E27 (delegate-vs-dump, compression ranking, budget utilization, drift sweep) → results appended
 - [x] P5: model experiments, cheap tier E16–E19 + E22–E23 (haiku/sonnet rule-recall, template compliance) → agent reports logged with scores
 - [x] P6: Opus-coordinator experiments E20–E21 → agent reports logged with compliance scores
-- [ ] P7: synthesis — apply self-serve improvements, write proposals for gated ones → receipts + grep-verified references
+- [x] P7: synthesis — apply self-serve improvements, write proposals for gated ones → receipts + grep-verified references
 - [ ] P8: retro — decision records, LESSONS, Status: done
 
 ## Progress log
@@ -37,6 +37,7 @@ Status: active (2026-07-04)
 - 2026-07-04 | P4 | cost_sim.py exit 0; E24–E27 logged. cost_sim sha=3312e116a22c b=4256 · log sha=33e6121da201 b=12733. H7=STRONGLY SUPPORTED (78% commander savings, overhead 0.1%); E25: pack01 = #1 compression target; E27: zero numeric drift
 - 2026-07-04 | P5 | 5 agents (4 haiku, 1 sonnet) run + graded. quiz key sha=7120eea387ae b=2903 · compressed artifact sha=b9fa8c35e498 b=4768 · log sha=0739ef60c57f b=15030. E16 haiku/original 7/10 strict; E17 haiku/compressed-47% 10/10; E19 sonnet 10/10; E18 search 11/11 files exact; E22 format 4/4 (+report-bloat finding); E23 receipt genuine (sha re-run match) but 7 lines ≠ "exactly 3" spec. H3=PARTIAL, H5=SUPPORTED+exceeded
 - 2026-07-04 | P6 | 2 opus commanders run + graded vs ground truth (13 files; 24 lines/8 files). log sha=1637ab0bd370 b=17262. E20: 2/2 grunt parts delegated, triple verified on disk, contract 5/5 — H4=SUPPORTED (budget-blind judgment noted). E21 portability floor: no-subagent discipline held, findings file verified, contract 5/5; one verdict-line arithmetic slip (9 vs 8 files)
+- 2026-07-04 | P7 | 3 self-serve edits applied (receipt.sh rot sha=3c3746b4a0dc · portability rows sha=7147ce9be24b · anti-padding sha=1e69807b6848), all referenced paths ls-verified, bash -n OK; 4 gated changes → proposal sha=0f49d66b107c b=3575; synthesis in log sha=0ee5a511d22f b=18997
 
 ## Decisions
 - Token counts approximated as bytes/4 (no tokenizer guaranteed on-prem);

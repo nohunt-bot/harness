@@ -283,3 +283,36 @@ refs path:line (grunt), pick the one home for a hypothetical new rule
   - **Portability-floor coordination: WORKS.** Cost note: 36,970 vs 37,585
     tok — for small tasks delegation is cost-neutral, exactly as E24
     predicts (delegation pays in proportion to bulk).
+
+## Synthesis — findings → actions
+
+Hypothesis scoreboard: H1 PARTIAL · H2 SUPPORTED · H3 PARTIAL ·
+H4 SUPPORTED · H5 SUPPORTED (exceeded) · H6 SUPPORTED · H7 STRONGLY
+SUPPORTED. 27/27 experiments ran; none left planned.
+
+**Applied (self-serve, this loop):**
+1. `scripts/receipt.sh:3` — stale `.cursor/harness/` path → `pack/` (E11 rot).
+2. `portability/base-system-prompt.md` — capability-map rows for slash
+   commands and MCP (E14 gaps).
+3. `templates/delegate-search.md` — anti-padding clause (E22 report bloat).
+
+**Proposed (approval-gated):** `docs/proposals/20260704-cost-efficiency-actions.md`
+1. Adopt compressed pack 01 (−47.3%, haiku recall 7→10/10).
+2. No-subagent fresh-context-verification ritual (E15's systemic hole).
+3. Hook comment rot + shebang normalization.
+4. Anti-padding clause in remaining templates + report contract.
+
+**Standing conclusions for "take this anywhere with any LLM":**
+- The mechanical layer (receipts/tripwire/freeze, worktree/verify) is
+  verified portable — bash+git only, 9/9 live-run (E12/E13).
+- Coordination survives the portability floor with no subagents (E21); the
+  single remaining hole is fresh-context verification (proposal #2).
+- Rule-following does not need an expensive model — it needs *dense* rule
+  text (E16/E17/E19): compression, not tier, closes the gap.
+- Delegation is the dominant cost lever (E24: 78% commander savings,
+  overhead 0.1%) and is already mandated; the tier table + single-model
+  clause make it model-agnostic.
+
+**Limitations:** token counts are bytes/4 estimates; model experiments are
+n=1 per cell (directional, not statistical); grading by the commander, not
+a fresh judge, except where sha re-runs made grading mechanical.
