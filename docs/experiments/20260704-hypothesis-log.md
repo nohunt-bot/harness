@@ -245,3 +245,41 @@ missing capability-map rows.
   anyway (describing "three substantive paragraphs"). Mechanical defense
   held; semantic spec compliance decayed — pack 01 §1's thesis reproduced
   in vivo.
+
+### Block C (cont.) — Opus as coordinator (run 2026-07-04)
+
+Shared 3-part task: count docs/*.md by subdir (grunt), find all worktree.sh
+refs path:line (grunt), pick the one home for a hypothetical new rule
+(judgment). My ground truth: 13 .md files; 24 reference lines across 8 files.
+
+- **E20** Opus commander under `rules/model-dispatch.md` (37,585 tok,
+  10 tool uses, subagents allowed):
+  - Delegated **2/2** grunt parts to CHEAP (haiku) — rubric pass.
+  - Dispatch prompts (verified on disk, `scratchpad/e20-dispatches.md`):
+    both carry the full delegation triple, explicitly labeled, checkable
+    criteria, anti-dump clauses — **textbook**.
+  - Report contract 5/5 sections, no dumps; results match ground truth
+    (13; 24 lines).
+  - Judgment nuance: recommended placing the new rule in CLAUDE.md "Hard
+    rules" — defensible in isolation, but **budget-blind** (26 B headroom;
+    MAINTENANCE prime directive #1 requires removing a rule to add one).
+    The commander had only read the dispatch rules, not MAINTENANCE.md.
+  - **H4 verdict: SUPPORTED** — Opus coordinates by the book when given
+    the book; the miss was in the part of the book it wasn't routed to.
+- **E21** Opus commander under the *portability floor* (base-system-prompt
+  "Role"-down + CLAUDE.md, no-subagent constraint; 36,970 tok, 10 tool
+  uses):
+  - Spawned nothing; worked in explicit phases; intermediate findings
+    written to `scratchpad/e21-findings.md` (3,889 B, verified on disk) —
+    the dispatch §1 no-subagent discipline held.
+  - Report contract 5/5, every claim path:line, honest open-issue about
+    subdir bucketing. Results match ground truth on both counts, except the
+    verdict line said "9 files" while its own (correct, 24-line) list has 8
+    unique files — a self-report arithmetic slip a fresh verifier catches
+    in seconds.
+  - Judgment: recommended the hypothesis log's methodology block — placement
+    that respects the 3 KB budget; on this axis the floor run *beat* the
+    full-platform run.
+  - **Portability-floor coordination: WORKS.** Cost note: 36,970 vs 37,585
+    tok — for small tasks delegation is cost-neutral, exactly as E24
+    predicts (delegation pays in proportion to bulk).
