@@ -36,6 +36,16 @@ Compact when > 30 entries or ~200 lines.
   security-scan.sh, mcp.json) and `install.sh --check` fails on stale files and
   non-symlink drift; hooks/sync-sentinel.sh warns each session start.
 
+## 2026-07-04 — Rename rot survived in script comments the rot sweep never covered
+- What happened: the 2026-07-03 `.cursor/harness/` → `pack/` rename was
+  grep-verified, yet `scripts/receipt.sh:3` and `hooks/resume-sentinel.sh:3`
+  still pointed at the dead path a day later (found by experiment E11).
+- Root cause: reference-rot sweeps (harness-health step 2) were scoped to the
+  .md rule directories; comments in `scripts/` and `hooks/` were never in scope.
+- Rule change: applied — harness-health step 2 now includes `scripts/*.sh` and
+  `hooks/*.sh` comments; receipt.sh fixed same-day (commit c488c97), the hook
+  comment fix is gated → docs/proposals/20260704-cost-efficiency-actions.md §3.
+
 ## 2026-07-03 — Pack distillation restated canonical numbers and drifted same-day
 - What happened: the new weak-model pack restated the single-model retry clause
   and the receipt scope with different arithmetic than their canonical homes;

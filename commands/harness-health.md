@@ -8,8 +8,10 @@ not impressions. The harness lives at `~/.claude/harness` (a symlink to the repo
 1. **Mechanical check**: run `bash ~/.claude/harness/install.sh --check`. It covers
    symlink integrity/fork drift, MCP registration, the CLAUDE.md 3 KB cap, and
    stale superseded files. Include its output verbatim.
-2. **Reference rot**: grep `rules/`, `templates/`, `agents/`, `commands/`, and
-   `pack/` for referenced paths, agent names, and commands; verify
+2. **Reference rot**: grep `rules/`, `templates/`, `agents/`, `commands/`,
+   `pack/`, plus comments in `scripts/*.sh` and `hooks/*.sh` (rot survives
+   there too — see LESSONS 2026-07-04), for referenced paths, agent names,
+   and commands; verify
    each referenced thing exists (`ls` the path, check the agent/skill file).
    For each pack-canonical mechanism (tripwire, receipts, freeze, strikes)
    confirm every non-canonical home states IDENTICAL numbers
