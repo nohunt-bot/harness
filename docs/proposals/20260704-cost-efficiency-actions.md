@@ -14,6 +14,9 @@ the live file → 9, 8, 9, 10, 10 = **mean 9.2/10 strict** (≥9 threshold from
 docs/decisions/20260704-experiment-methodology.md; original scored 7/10).
 E27 drift sweep re-run: zero drift. Original backed up to
 `backups/01_diagnostics.md.bak-20260704` (sha=0b65c29a48ae).
+Fresh-context opus equivalence review (OLD vs NEW, falsification framing):
+**APPROVE** — 0 blockers/should-fix, 3 nits, 2 restored same day (Q&A
+receipt exemption; retry-vs-TRIPWIRE note).
 
 - **What**: replace `pack/01_diagnostics.md` (9,040 B) with the content of
   `docs/experiments/artifacts/pack01-compressed.md` (4,768 B), keeping the

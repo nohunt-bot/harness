@@ -20,6 +20,8 @@ and must not miss a consumer"}}.
 2. You searched for ALL the alternative names listed above, not just the first term.
 3. You state the search commands you ran, so misses are diagnosable.
 4. If you found zero matches for any term, you say so explicitly (silence ≠ none).
+5. The verdict line's match/file counts equal what the table actually contains —
+   recount the table before sending (verdict-line miscounts are a known failure).
 
 ## Report format
 - Verdict line: "N matches across M files" (or "no matches — searched: [terms]").

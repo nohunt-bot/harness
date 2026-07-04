@@ -323,3 +323,15 @@ re-run at **n=5** on the final live file (5,867 B, −35.1%): strict scores
 9, 8, 9, 10, 10 → **mean 9.2/10** vs 7/10 on the original — the compression
 gain replicates beyond n=1. Residual misses remain the same rule-tail
 pattern (WARNING banner, re-run-verification).
+
+**Verification addendum (2026-07-04):** two gaps closed after user request.
+(1) Fresh-context opus review of OLD-vs-NEW pack 01 (received only the two
+file paths + criteria): **APPROVE**, 0 blockers, 0 should-fix, 3 nits — two
+restored by the author (the "Pure Q&A needs none" receipt exemption; the
+`(retry: N)`-vs-TRIPWIRE de-confliction note). (2) E22 rerun with the
+anti-padding template: **10/10 lines, 7/7 files exact** vs independent
+ground truth, **zero unrequested sections** (was ~60% padding), −15%
+session tokens (23,253 vs 27,234). New recurring finding, now a rule:
+verdict-line counts drifted from the itemized table twice across two tiers
+(E21 opus "9 vs 8", E22-rerun haiku "6 vs 7") → delegate-search criterion 5
++ LESSONS entry.

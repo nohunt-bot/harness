@@ -36,6 +36,15 @@ Compact when > 30 entries or ~200 lines.
   security-scan.sh, mcp.json) and `install.sh --check` fails on stale files and
   non-symlink drift; hooks/sync-sentinel.sh warns each session start.
 
+## 2026-07-04 — Verdict-line counts drift from the itemized list (twice, two tiers)
+- What happened: two search reports had correct itemized path:line tables but
+  wrong file counts in the verdict line (opus: "9 files" vs 8 listed; haiku:
+  "6 files" vs 7 listed) — E21 and the E22 rerun, same day.
+- Root cause: the verdict line is composed from memory after the table is
+  built; nothing forces a recount against the table.
+- Rule change: applied — delegate-search.md acceptance criterion 5 (recount
+  the table before sending). Commanders: trust the table, re-count the verdict.
+
 ## 2026-07-04 — Rename rot survived in script comments the rot sweep never covered
 - What happened: the 2026-07-03 `.cursor/harness/` → `pack/` rename was
   grep-verified, yet `scripts/receipt.sh:3` and `hooks/resume-sentinel.sh:3`

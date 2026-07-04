@@ -48,14 +48,15 @@ cloned repo's `scripts/receipt.sh`) prints
 on missing/empty. Required: (a) every phase close — the progress line
 carries the receipts; (b) final report of any task claiming a file changed;
 (c) any statement to the user that a file landed — receipt in the SAME
-turn, never recalled from earlier. Claim without receipt = NOT DONE (hard
-rule, `CLAUDE.md`). Verifiers re-run receipt.sh; sha mismatch or MISSING =
-false completion — report as an incident.
+turn, never recalled from earlier. Pure Q&A needs none. Claim without
+receipt = NOT DONE (hard rule, `CLAUDE.md`). Verifiers re-run receipt.sh;
+sha mismatch or MISSING = false completion — report as an incident.
 
 ### 3.2 TRIPWIRE
 Count 3 consecutive failed tool calls, or 3 failures of the same
 call/subtask; the tally lives in the task file (`TRIPWIRE n/3 <what>`),
-never in memory. At 2 failures of the same call: re-read the schema/--help
+never in memory. Step-level `(retry: N)` marks stay reserved for failed
+step checks (`rules/long-tasks.md` §1) — they are not this tally. At 2 failures of the same call: re-read the schema/--help
 and change something material before attempt 3. At 3: STOP the route; write
 a TRIPWIRE line (the 3 attempts, exact errors, one-line hypothesis); change
 approach per `rules/judgment.md` §4 or escalate (`02_orchestration.md` §4).
