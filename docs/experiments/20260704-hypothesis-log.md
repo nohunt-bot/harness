@@ -135,3 +135,53 @@ Status key: each experiment gets `Result:` and `Verdict:` lines when run.
 resident overlay), but the "≥25% restatement" half is **REFUTED** — verbatim
 overlap is ≤5.4%; the pack distills rather than duplicates. Cost-cutting must
 come from *routing fewer/smaller files per session type*, not deduplication.
+
+### Block B — Portability lint (run 2026-07-04, `scripts/portability_lint.py`
+### + `scripts/e13_liverun.sh`, both exit 0)
+
+- **E11** Term inventory (rule-bearing files): model-names=10, Claude Code=12,
+  cc-tools=9, cc-config (settings.json/`~/.claude`/hook events)=36, MCP=7,
+  other-envs=9, vendor=0. Classification:
+  - *Legit by design*: 8/10 model names sit in `rules/model-dispatch.md` §2 —
+    the tier table that is documented as the ONLY fill location; portability
+    file's own mentions are its job; `~/.claude` paths are covered by the
+    operator checklist step 2 (recreate symlink or sed the prefix).
+  - *Leaks*: `agents/code-judge.md` + `agents/implementer.md` carry hardcoded
+    `model:` names in frontmatter (harmless off-platform, but undocumented);
+    `commands/*.md` are Claude-Code-only with no pointer from the portability
+    file. Verdict: **SUPPORTED** (H2) — debt is bounded, enumerable, and
+    mostly pre-mitigated.
+- **E12** Shell portability: 7/7 scripts `bash -n` OK. receipt.sh's BSD
+  `date -r` / GNU `stat -c` are a guarded fallback chain (verified by read) —
+  portable. Only nit: hooks + install.sh use `#!/bin/bash` while scripts/ use
+  `#!/usr/bin/env bash`; the latter survives NixOS/BSD. No `stat -f`, no BSD
+  in-place sed anywhere.
+- **E13** Live-run in throwaway repo: **9/9 PASS** — receipt.sh (exists=0,
+  missing=1, empty=1, usage=2), worktree.sh create/drop, verify.sh (custom
+  pass=0, custom fail=1, no-runner=1). Verdict: **SUPPORTED** (H6) — the
+  mechanical layer runs on plain bash+git.
+- **E14** Capability-map coverage: covered — subagents, worktrees, plan mode,
+  hooks, settings.json, memory, CLAUDE.md injection, verify gate. **Missing
+  rows**: slash commands (`/retro`, `/harness-health` — manual fallbacks
+  exist in long-tasks §5 / MAINTENANCE health-check but the map never says
+  so) and MCP (referenced in pack01/06; on-prem it silently doesn't exist).
+- **E15** Single-model / no-subagent degradation trace:
+  | Rule | Assumption | Fallback? |
+  |---|---|---|
+  | CLAUDE.md core loop | none | portable |
+  | dispatch §1 commander rules | subagents | ✓ explicit no-subagent ¶ |
+  | dispatch §2 tier table | multi-model | ✓ fill procedure |
+  | dispatch §4 ladder | multi-tier | ✓ single-model collapse clause |
+  | dispatch §6 fresh-context verification | **subagents** | **✗ none** |
+  | pack02 §6 verification isolation | **subagents** | **✗ none** |
+  | judgment §2 done-check ("fresh context") | **subagents** | **✗ none** |
+  | long-tasks §3 routing table | subagents+worktrees | worktree.sh ✓; subagent fallback only implied via dispatch §1 |
+  | commands /retro, /harness-health | slash commands | ✓ manual walk documented |
+  Verdict: **PARTIAL** — single-model is fully handled; no-subagent has ONE
+  systemic hole repeated in three homes: *fresh-context verification is
+  undefined when nothing can be spawned* (a new-session ritual via the task
+  file would close it).
+
+**H2 verdict: SUPPORTED. H6 verdict: SUPPORTED.** Biggest portability action:
+define the no-subagent fresh-context-verification ritual + add the two
+missing capability-map rows.
