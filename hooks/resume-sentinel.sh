@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # SessionStart sentinel for resume/compact — re-anchor after context loss.
-# Counterpart of the on-prem resume ritual (.cursor/harness/01_diagnostics.md §2,
+# Counterpart of the on-prem resume ritual (pack/01_diagnostics.md §2,
 # Scenario 2). Fail-soft: prints pointers only, never blocks (always exit 0).
 set -uo pipefail
 

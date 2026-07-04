@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # SessionStart sentinel — warn when the harness repo has drifted from origin.
 # Offline-safe: no network calls; "behind" compares against the last-fetched
 # origin state. Silent when everything is clean. Never blocks (always exit 0).

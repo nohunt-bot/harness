@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Install the dotfiles-claude harness on this machine.
 # Idempotent: safe to re-run. Existing files are backed up, never deleted.
 #

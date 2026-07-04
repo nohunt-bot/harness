@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Security scanner — PreToolUse hook for Claude Code
 # Triggers before Bash commands that install packages or clone repos
 
