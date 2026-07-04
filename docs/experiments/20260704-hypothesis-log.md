@@ -104,4 +104,34 @@ Status key: each experiment gets `Result:` and `Verdict:` lines when run.
 
 ## Results
 
-(appended per experiment as they run)
+### Block A — Footprint (run 2026-07-04, `scripts/footprint.py`, exit 0)
+
+- **E01** CLAUDE.md = 3,046 B (~761 tok), budget 3,072 B → **WITHIN, 26 B
+  headroom**. Verdict: **SUPPORTED** (budget holds, but headroom is 0.8% —
+  effectively frozen).
+- **E02** Always-loaded overlay at session start = **4,104 B (~1,026 tok)**:
+  CLAUDE.md 3,046 + MEMORY.md index 569 + resume-sentinel stdout 336 +
+  sync-sentinel stdout 153 (both hooks exit 0). Verdict: **SUPPORTED** — the
+  resident cost is small and dominated by CLAUDE.md itself.
+- **E03** rules/ total 17,183 B (~4.3k tok): model-dispatch 6,701 /
+  judgment 5,970 / long-tasks 4,512.
+- **E04** pack/ total 39,061 B (~9.8k tok): pack01 9,040 is the largest
+  single rule file in the repo.
+- **E05** Long-task routed load (CLAUDE.md + pack01 + long-tasks +
+  model-dispatch + judgment + 1 template) = **30,500 B (~7.6k tok)** — 7.4×
+  the always-loaded overlay. The weak-model path per CLAUDE.md also routes pack
+  02–04 (+18,259 B), worst case ≈ **48.8 KB (~12.2k tok)** before any work
+  starts.
+- **E06** pack→source verbatim 8-word-shingle overlap: 0.0–5.4% per pack
+  file (lower bound of restatement). Mechanism keywords appear in 4–10 files
+  each (escalat=10, receipt=8, TRIPWIRE=7) — redundancy is *referential*
+  (cross-links), not copied text.
+- **E07** templates/ = 1,015–1,694 B each (~250–420 tok per dispatch).
+- **E08** (folded into E02): hook stdout = 489 B total, fail-soft exit 0.
+- **E09** agents/ pipeline load = 8,547 B (~2.1k tok), orchestrator 4,634.
+- **E10** maintenance-time load = 17,100 B (~4.3k tok), README is half of it.
+
+**H1 verdict: PARTIAL.** Routed load dominates as predicted (7.4–11.9× the
+resident overlay), but the "≥25% restatement" half is **REFUTED** — verbatim
+overlap is ≤5.4%; the pack distills rather than duplicates. Cost-cutting must
+come from *routing fewer/smaller files per session type*, not deduplication.

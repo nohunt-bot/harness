@@ -21,7 +21,7 @@ Status: active (2026-07-04)
 
 ## Plan
 - [x] P1: task file + hypothesis log skeleton (H1–H7, E01–E27 defined) → receipts on both files
-- [ ] P2: footprint measurements E01–E10 (always-loaded, routed, dispatch overhead) → measurement script exits 0; results + verdicts appended to log
+- [x] P2: footprint measurements E01–E10 (always-loaded, routed, dispatch overhead) → measurement script exits 0; results + verdicts appended to log
 - [ ] P3: portability lint E11–E15 (env-specific term inventory, script portability, capability-map coverage) → script exits 0; results appended
 - [ ] P4: cost simulations E24–E27 (delegate-vs-dump, compression ranking, budget utilization, drift sweep) → results appended
 - [ ] P5: model experiments, cheap tier E16–E19 + E22–E23 (haiku/sonnet rule-recall, template compliance) → agent reports logged with scores
@@ -32,6 +32,7 @@ Status: active (2026-07-04)
 ## Progress log
 - 2026-07-04 | plan | task file created before first edit (long-tasks.md §1)
 - 2026-07-04 | P1 | task file sha=b13bf5d4eead b=2576 · hypothesis log sha=464ca6b88cf0 b=6009 — H1–H7, E01–E27 defined
+- 2026-07-04 | P2 | footprint.py exit 0; E01–E10 logged. footprint.py sha=afd168573649 b=3882 · log sha=9bfdfff3cfa6 b=7918. H1=PARTIAL (routed load 7.4–11.9× resident; verbatim dup ≤5.4%)
 
 ## Decisions
 - Token counts approximated as bytes/4 (no tokenizer guaranteed on-prem);
