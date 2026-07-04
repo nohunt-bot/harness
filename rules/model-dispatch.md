@@ -109,8 +109,10 @@ Subagents return, in order:
    to a file; the report carries the path only.
 5. **Open issues**: anything noticed but out of scope — one line each.
 
-The commander rejects reports that violate this (ask the agent to re-report; do not
-paste-and-fix in the main thread).
+Reports contain the five sections and nothing else — unrequested extra
+analysis is padding the commander pays for. The commander rejects reports
+that violate this (ask the agent to re-report; do not paste-and-fix in the
+main thread).
 
 ## 6. Verification is never self-verification
 

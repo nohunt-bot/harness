@@ -37,3 +37,5 @@ actively try to falsify.
 - Findings list, each: `severity (blocker/should-fix/nit) | path:line | issue |
   suggested fix`.
 - Do not fix anything yourself; findings go back to the author.
+- Return ONLY the sections above — no extra analysis or recommendations beyond
+  the criteria (padding costs the commander context).

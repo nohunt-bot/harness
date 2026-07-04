@@ -33,3 +33,5 @@ file exists, give its path and say "follow it exactly".}}
 - Files changed: `path:line-range | what changed`, one per line.
 - Decisions you made that the spec didn't cover (one line each).
 - Do NOT paste diffs or file bodies; I will read the files.
+- Return ONLY the sections above — no extra analysis or recommendations beyond
+  the criteria (padding costs the commander context).

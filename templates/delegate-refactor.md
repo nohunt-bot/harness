@@ -33,3 +33,5 @@ Refactor {{what, e.g. "extract the retry logic from client.py into retry.py"}} i
 - Move map: `old location → new location`, one per line.
 - Each criterion: pass/fail + evidence.
 - Open issues: real bugs found but NOT fixed (path:line each).
+- Return ONLY the sections above — no extra analysis or recommendations beyond
+  the criteria (padding costs the commander context).

@@ -7,6 +7,14 @@ comment rot, 2 capability-map rows, anti-padding line in delegate-search.md.
 
 ## 1. Adopt the compressed pack 01 (−47.3% bytes, recall ↑)
 
+**STATUS: APPROVED by user 2026-07-04 ("都處理") and APPLIED.** Live file =
+5,867 B (−35.1%; provenance header + Scenario labels restored to keep
+external references resolving). Validation before commit: n=5 haiku quiz on
+the live file → 9, 8, 9, 10, 10 = **mean 9.2/10 strict** (≥9 threshold from
+docs/decisions/20260704-experiment-methodology.md; original scored 7/10).
+E27 drift sweep re-run: zero drift. Original backed up to
+`backups/01_diagnostics.md.bak-20260704` (sha=0b65c29a48ae).
+
 - **What**: replace `pack/01_diagnostics.md` (9,040 B) with the content of
   `docs/experiments/artifacts/pack01-compressed.md` (4,768 B), keeping the
   §-numbering and every mechanism/number identical (E27-style sweep re-run
@@ -43,6 +51,10 @@ self-verification":
 
 ## 3. Hooks: comment rot + shebang normalization (E11/E12)
 
+**STATUS: APPROVED by user 2026-07-04 ("都處理") and APPLIED** — comment fix
+in resume-sentinel.sh; `#!/usr/bin/env bash` in all 3 hooks + install.sh;
+`bash -n` clean, hooks smoke-run exit 0, `install.sh --check` OK.
+
 - `hooks/resume-sentinel.sh:3`: `.cursor/harness/01_diagnostics.md` →
   `pack/01_diagnostics.md` (comment-only; same rot already fixed self-serve
   in scripts/receipt.sh).
@@ -52,6 +64,11 @@ self-verification":
   zero-behavior-change edits.
 
 ## 4. Anti-padding clause in the remaining templates + report contract (E22)
+
+**STATUS: APPROVED by user 2026-07-04 ("都處理") and APPLIED** — clause added
+to delegate-{review,refactor,implement}.md (delegate-research.md already had
+an equivalent "Nothing else" line); report-contract sentence added to
+`rules/model-dispatch.md` §5. All four proposal items are now closed.
 
 - E22: a compliant CHEAP report was ~60% unrequested analysis — the
   contract caps dumps but not padding.
