@@ -70,6 +70,10 @@ deleted (the rule is their tombstone — link the commit). Target after compacti
 under 15 entries. Compaction is self-serve, but commit the pre-compaction state
 first so nothing is lost.
 
+Proposals have a lifecycle instead of compaction: `docs/proposals/` holds OPEN
+proposals only. Once approved+applied (or rejected), move the file to
+`archive/proposals/` and update every referrer — archive-only, never delete.
+
 ## Health check (run when asked to "audit the harness", or ~monthly)
 
 1. `wc -c CLAUDE.md` — under 3072 bytes?

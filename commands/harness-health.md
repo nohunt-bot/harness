@@ -33,6 +33,15 @@ not impressions. The harness lives at `~/.claude/harness` (a symlink to the repo
 7. **Sync state**: `git -C ~/.claude/harness fetch --quiet` then
    `git -C ~/.claude/harness status -sb` — report dirty/ahead/behind. Uncommitted
    harness edits are fork drift in progress: fold them into a commit or revert.
+8. **Growth ledger** (anti-bloat; every vector that grows with use): (a) memory
+   index `~/.claude/projects/*/memory/MEMORY.md` — flag if >1.5 KB or any entry
+   points at a delivered/finished artifact (verify, then archive the memory to
+   `memory/archive/` and drop its index line); (b) `docs/proposals/` must hold
+   OPEN proposals only — approved+applied or rejected ones move to
+   `archive/proposals/` with referrers updated (MAINTENANCE.md §Compaction);
+   (c) recompute the always-loaded overlay (CLAUDE.md + memory index + hook
+   stdout) and compare against the last recorded figure in
+   `docs/experiments/baselines/` — growth without a named cause is the finding.
 
 Report using the report contract in `rules/model-dispatch.md` §5: verdict line,
 evidence per step (pass/fail + proof), references as `file:line`, open issues.
