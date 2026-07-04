@@ -316,3 +316,10 @@ SUPPORTED. 27/27 experiments ran; none left planned.
 **Limitations:** token counts are bytes/4 estimates; model experiments are
 n=1 per cell (directional, not statistical); grading by the commander, not
 a fresh judge, except where sha re-runs made grading mechanical.
+
+**Post-loop addendum (2026-07-04, same day):** all four proposals approved
+and applied. Before adopting the compressed pack 01, the E16/E17 quiz was
+re-run at **n=5** on the final live file (5,867 B, −35.1%): strict scores
+9, 8, 9, 10, 10 → **mean 9.2/10** vs 7/10 on the original — the compression
+gain replicates beyond n=1. Residual misses remain the same rule-tail
+pattern (WARNING banner, re-run-verification).

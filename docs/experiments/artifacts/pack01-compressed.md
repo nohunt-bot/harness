@@ -2,6 +2,9 @@
 
 Experiment artifact for E17 (H5): pack/01_diagnostics.md compressed ~40%,
 all mechanisms and numbers preserved. Canonical file: `pack/01_diagnostics.md`.
+ADOPTED 2026-07-04 (proposal §1, n=5 validation mean 9.2/10): the live
+pack/01_diagnostics.md now carries this content plus provenance header and
+Scenario labels. This file stays as the frozen experiment record.
 
 Audience: STANDARD-or-below models on long tasks. Precedence: `rules/`,
 `MAINTENANCE.md`, `docs/DIAGNOSIS.md` win on conflict (conflict = bug: log in
