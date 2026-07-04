@@ -185,3 +185,27 @@ come from *routing fewer/smaller files per session type*, not deduplication.
 **H2 verdict: SUPPORTED. H6 verdict: SUPPORTED.** Biggest portability action:
 define the no-subagent fresh-context-verification ritual + add the two
 missing capability-map rows.
+
+### Block D — Cost simulations (run 2026-07-04, `scripts/cost_sim.py`, exit 0;
+### run before Block C so model experiments could target the findings)
+
+- **E24** 10-phase long task, 6 turns/phase, real repo sizes (resident 4,104 B,
+  routed 30,500 B, bulk-read 36 KB/phase vs template 1.4 KB + report 1.6 KB):
+  - Raw-dump commander: final context ~98.7k tok, cumulative input ~3.49M tok
+    (blows a 200k window before phase 10 → compaction → Scenario-2 drift).
+  - Delegate commander: final context ~16.2k tok, cumulative input ~0.77M tok,
+    plus ~0.28M tok in *disposable* CHEAP-tier subagent contexts.
+  - **Commander savings 78%; same-tier total ratio 0.30; delegation wins for
+    any TOP:CHEAP price ratio > 0.10 (i.e., always). Template overhead =
+    0.1% of savings.** Verdict: **H7 STRONGLY SUPPORTED** — and the win is
+    dominated by *not re-sending dumps every turn*, not by tier pricing.
+- **E25** Compression payoff (bytes × cross-repo refs): pack01 162.7k (9,040 B
+  × 18 refs) > model-dispatch 154.1k > judgment 113.4k > MAINTENANCE 75.2k.
+  **pack01 is the #1 compression target** — feeds E17.
+- **E26** CLAUDE.md budget: core loop 1,135 B (37%), hard rules 561 B,
+  circuit breaker 331 B, delegation 280 B; 26 B headroom. No droppable
+  section — every section is router or hard rule; the cap is honest.
+- **E27** Mechanism-number drift sweep: tripwire "3 consecutive" ×5 homes,
+  retry cap ×2, strike rules ×4, LESSONS thresholds ×3, byte cap ×9 — all
+  hits eyeballed, **numerically consistent, zero drift**. Verdict: the
+  2026-07-03 drift lesson's fix (harness-health pack sweep) is holding.

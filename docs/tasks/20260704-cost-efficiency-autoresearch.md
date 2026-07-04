@@ -23,7 +23,7 @@ Status: active (2026-07-04)
 - [x] P1: task file + hypothesis log skeleton (H1–H7, E01–E27 defined) → receipts on both files
 - [x] P2: footprint measurements E01–E10 (always-loaded, routed, dispatch overhead) → measurement script exits 0; results + verdicts appended to log
 - [x] P3: portability lint E11–E15 (env-specific term inventory, script portability, capability-map coverage) → script exits 0; results appended
-- [ ] P4: cost simulations E24–E27 (delegate-vs-dump, compression ranking, budget utilization, drift sweep) → results appended
+- [x] P4: cost simulations E24–E27 (delegate-vs-dump, compression ranking, budget utilization, drift sweep) → results appended
 - [ ] P5: model experiments, cheap tier E16–E19 + E22–E23 (haiku/sonnet rule-recall, template compliance) → agent reports logged with scores
 - [ ] P6: Opus-coordinator experiments E20–E21 → agent reports logged with compliance scores
 - [ ] P7: synthesis — apply self-serve improvements, write proposals for gated ones → receipts + grep-verified references
@@ -34,6 +34,7 @@ Status: active (2026-07-04)
 - 2026-07-04 | P1 | task file sha=b13bf5d4eead b=2576 · hypothesis log sha=464ca6b88cf0 b=6009 — H1–H7, E01–E27 defined
 - 2026-07-04 | P2 | footprint.py exit 0; E01–E10 logged. footprint.py sha=afd168573649 b=3882 · log sha=9bfdfff3cfa6 b=7918. H1=PARTIAL (routed load 7.4–11.9× resident; verbatim dup ≤5.4%)
 - 2026-07-04 | P3 | portability_lint.py + e13_liverun.sh exit 0; E11–E15 logged. lint sha=b85d136a6dde b=3536 · e13 sha=9c3bb212ad5e b=1759 · log sha=1bcfcc20b7b5 b=11093. H2=SUPPORTED, H6=SUPPORTED (E13 9/9 PASS); systemic gap: no-subagent fresh-context verification undefined in 3 homes
+- 2026-07-04 | P4 | cost_sim.py exit 0; E24–E27 logged. cost_sim sha=3312e116a22c b=4256 · log sha=33e6121da201 b=12733. H7=STRONGLY SUPPORTED (78% commander savings, overhead 0.1%); E25: pack01 = #1 compression target; E27: zero numeric drift
 
 ## Decisions
 - Token counts approximated as bytes/4 (no tokenizer guaranteed on-prem);
