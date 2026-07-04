@@ -29,7 +29,8 @@ failing assertion pointing at the exact line): just fix and rerun once.
 
 - [ ] Every acceptance criterion has evidence (command output, read-back, test run)
       — not inference. If there were no criteria, that's the bug: write them, then check.
-- [ ] Verification was executed in a fresh context, not by the author (`model-dispatch.md` §6).
+- [ ] Verification was executed in a fresh context, not by the author
+      (`model-dispatch.md` §6; no-subagent env: a fresh NEW session per that section).
 - [ ] The change was exercised through its *real* entry point at least once (run the
       CLI, hit the endpoint, load the page) — unit tests alone don't count.
 - [ ] Nothing you touched is left broken: build passes, no orphaned imports/refs

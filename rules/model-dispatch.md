@@ -127,3 +127,10 @@ paste-and-fix in the main thread).
   orchestrator/implementer/code-judge pipeline in `agents/` implements this).
 - Verifier findings go back to the **author's tier** for fixes; a failed
   verification counts as one failure in the §4 ladder.
+- **No-subagent environments**: "fresh context" = a NEW session (or fully
+  cleared context) whose prompt contains ONLY the acceptance criteria, the
+  artifact paths, and the `scripts/receipt.sh` claims to re-check — never the
+  author's reasoning. The task file carries the handoff
+  (`rules/long-tasks.md` §2). Same-session self-review does not satisfy this
+  section. (Approved 2026-07-04,
+  `docs/proposals/20260704-cost-efficiency-actions.md` §2.)

@@ -104,7 +104,9 @@ main thread.
 
 - The context that produced work never certifies it. Verification goes to a
   **fresh-context** agent that receives only the acceptance criteria and where
-  the work lives — not the author's reasoning.
+  the work lives — not the author's reasoning. No-subagent environments: a
+  NEW session serves as the fresh context (`rules/model-dispatch.md` §6,
+  canonical there); same-session self-review never qualifies.
 - Files/docs → verifier re-reads the file and re-runs
   `scripts/receipt.sh` (sha must match the author's claim).
 - Code → verifier actually runs tests/build/entry point

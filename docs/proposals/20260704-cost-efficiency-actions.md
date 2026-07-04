@@ -22,6 +22,10 @@ comment rot, 2 capability-map rows, anti-padding line in delegate-search.md.
 
 ## 2. Close the no-subagent fresh-context-verification hole (E15)
 
+**STATUS: APPROVED by user 2026-07-04 ("批准 最差的情況是要使用 fresh context
+進行驗證") and APPLIED — dispatch §6 (canonical clause), pack02 §6 (pointer),
+judgment §2 (checklist note). Items 1/3/4 below remain pending.**
+
 Three homes assume something can be spawned; on-prem no-subagent
 environments have no defined way to satisfy "verification is never
 self-verification":
