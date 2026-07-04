@@ -209,3 +209,39 @@ missing capability-map rows.
   retry cap ×2, strike rules ×4, LESSONS thresholds ×3, byte cap ×9 — all
   hits eyeballed, **numerically consistent, zero drift**. Verdict: the
   2026-07-03 drift lesson's fix (harness-health pack sweep) is holding.
+
+### Block C — Model experiments, cheap tier (run 2026-07-04; grading key +
+### scores in `e16-quiz-and-key.md`; n=1 per cell — directional)
+
+- **E16** Haiku recall quiz on the original pack 01: **7/10 strict, 10/10
+  lenient** (22,335 session tok). All 3 strict misses were *trailing clause
+  amnesia* — the answer's first half right, the rule's tail (WARNING banner,
+  re-run verification, trust-log-over-memory) dropped.
+- **E17** Haiku on the 47.3%-compressed variant
+  (`artifacts/pack01-compressed.md`, 4,768 B), same questions: **10/10
+  strict** (21,063 tok). The compressed file scored HIGHER than the original
+  with the same model — density made the rule tails salient instead of
+  burying them in narrative. **H5 verdict: SUPPORTED and exceeded** —
+  retention target was ≥90%; measured 143% of the original score.
+- **E19** Sonnet on the original: **10/10 strict** (22,096 tok). STANDARD
+  tier absorbs the verbosity that CHEAP tier drops.
+  **H3 verdict: PARTIAL** — haiku hit 70% strict (below the 80% bar) on the
+  *verbose* original but 100% on the compressed text: CHEAP tier suffices
+  for rule-following **if the rule text is dense**; the fix is compression,
+  not a bigger model.
+- **E18** Haiku search task (delegate-search template): **11/11 files found,
+  every path:line exact** against my independent grep ground truth; both
+  search terms covered; commands stated (27,234 tok, 12 tool uses).
+  CHEAP-tier assignment for search: validated.
+- **E22** Report-format compliance of the E18 run: all 4 required elements
+  present (verdict line / path:line table / commands / no >±2-line dumps) —
+  **4/4**. But ~60% of the report volume was *unrequested* extra analysis
+  (dependency tiers, change-impact ranking): report bloat that the commander
+  pays for. The template constrains dumps, not padding.
+- **E23** Receipt adherence, haiku: created the file and reported
+  `sha=0ffede4fb17b` — my re-run of receipt.sh reproduced the sha exactly →
+  **receipt genuine, no theater (PASS)**. But the file has **7 lines, not
+  the requested "exactly three lines"**, and the agent reported completion
+  anyway (describing "three substantive paragraphs"). Mechanical defense
+  held; semantic spec compliance decayed — pack 01 §1's thesis reproduced
+  in vivo.
