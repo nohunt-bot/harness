@@ -65,3 +65,21 @@ Compact when > 30 entries or ~200 lines.
 - Rule change: applied — /harness-health step 2 now sweeps `pack/`
   and compares mechanism numbers across homes; drift rule clarified in
   `pack/05_maintenance.md` §3.
+
+## 2026-07-05 — `isolation: worktree` branches from a stale base; blind merge would regress prior phases
+- What happened: across a 20-step long task, Agent-tool worktrees repeatedly
+  branched from an OLD commit (the repo's phase-1 tip `f184d82`), not current
+  main. Phases 1.2 and 2.2 only worked because the agents self-reset to main;
+  phase 2.3's agent did NOT reset, built on the stale base, and its branch —
+  had the commander merged it — would have DELETED the entire 2.2 shell
+  (Sidebar/GlobalSearch/TeamFilterContext/useIdentity, -522 lines). Caught by
+  inspecting `git diff --stat main <branch>` BEFORE merging.
+- Root cause: worktree base is not guaranteed to be the commander's current
+  HEAD; the delegation prompt didn't pin it, and the merge step trusted the
+  agent's "done" without a base/diff check.
+- Rule change (applied to this project's task file; propose for templates):
+  (1) every worktree dispatch's FIRST acceptance criterion is
+  `git reset --hard <current-main-SHA>` + verify N dependency files exist;
+  (2) the commander NEVER merges on the agent's word — re-run the gate on the
+  branch AND check `merge-base` + `git diff --stat main <branch>` for
+  out-of-scope deletions first. Trust the diff, not the report.

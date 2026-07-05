@@ -1,6 +1,4 @@
 {
-  "model": "opus",
-  "effortLevel": "high",
   "permissions": {
     "allow": [
       "Bash(git status:*)",
@@ -76,5 +74,6 @@
       }
     }
   },
+  "effortLevel": "high",
   "theme": "dark-ansi"
 }
